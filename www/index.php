@@ -43,6 +43,24 @@ echo $contents; } ?>
 
 <!-- end of project description -->
 
+  <pre>
+require(actogram)
+data(sesa)
+# a simple actogram without left strips
+actogram(activity ~ datetime_,  dat = sesa, subset = ID == 2, strip.left = FALSE, main = "actogram")
+
+# left strips indicating the date
+actogram(activity ~ datetime_,  dat = sesa, subset = ID == 2, main = "actogram")
+
+# breeding stage information marked by the strip color
+actogram(activity ~ datetime_,  strip.left.classes = "breeding_stage", dat = sesa, subset = ID == 2, main = "actogram")
+
+# a conditional actogram using all decorations
+actogram(activity ~ datetime_,  strip.left.classes = "breeding_stage", groups = "ID" , dat = sesa, main = "conditional actogram")
+  </pre>
+
+
+
 <p> <img src="conditionalActogram.png" alt="conditional actogram" /> </p>
 <p> <img src="simpleActogram.png" alt="simple actogram" /> </p>
 
