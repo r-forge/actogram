@@ -44,6 +44,7 @@ echo $contents; } ?>
 <!-- end of project description -->
 
 <p> <img src="conditionalActogram.png" alt="conditional actogram" /> </p>
+<p> <img src="simpleActogram.png" alt="simple actogram" /> </p>
 
 <p> The <strong>project summary page</strong> you can find <a href="http://<?php echo $domain; ?>/projects/<?php echo $group_name; ?>/"><strong>here</strong></a>. </p>
 

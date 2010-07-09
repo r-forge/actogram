@@ -35,7 +35,7 @@ if(doublePlot) {
 
 
 #groups
-G = if(!missing(groups)) dat[, groups] else NULL
+groups = if(!missing(groups)) dat[, groups] else NULL
 
 # xy scales
 scales = list( x = list(at = 0 : (if(doublePlot) 48 else 24), 
@@ -76,23 +76,43 @@ panel = function(x,y,...) {
 				    # panel.number() 
 				   }			  
 # legend
-groupLevels = levels(factor(dat[, groups]))
-stripLevels = levels(factor(z$Var1))
-		  
-key = list(..., adj = 1,
-			text = list(stripLevels),
-			rectangles = list(col = as.character(z$cols)),
-			text = list(groupLevels) , 
-			points = list(pch = 15, cex = 2, col =  trellis.par.get("superpose.symbol")$col[1:length(groupLevels)]),
-			rep = FALSE
-			)
+
+if(!is.null(groups) & nrow(z) > 1) {
+	groupLevels = levels(factor(groups))
+	stripLevels = levels(factor(z$Var1))
+			  
+	key = list(..., adj = 1,
+				text = list(stripLevels),
+				rectangles = list(col = as.character(z$cols)),
+				text = list(groupLevels) , 
+				points = list(pch = 15, cex = 2, col =  trellis.par.get("superpose.symbol")$col[1:length(groupLevels)]),
+				rep = FALSE
+				)
+	}	else if
+	(!is.null(groups) & nrow(z) == 1) {
+	groupLevels = levels(factor(groups))
+	key = list(..., adj = 1,
+				text = list(groupLevels) , 
+				points = list(pch = 15, cex = 2, col =  trellis.par.get("superpose.symbol")$col[1:length(groupLevels)])
+				)
+	} else if
+	(is.null(groups) & nrow(z) > 1) {
+	stripLevels = levels(factor(z$Var1))
+	key = list(..., adj = 1,
+				text = list(stripLevels),
+				rectangles = list(col = as.character(z$cols))
+				)
+	} else
+	key = NULL
+	
+	
 
 #xyplot
 xyplot(..., as.formula(paste(y, "~ Time|day")), data = dat, 
 			lattice.options = list(layout.widths = list(strip.left = list(x = max(nchar(dat$day)) ))),
 			layout = c(1, length(unique(dat[, "day"]))), 	
 			as.table = TRUE,
-			groups = G ,
+			groups = groups ,
 			strip = FALSE,
 			strip.left = strip.left,
 			panel = panel,	
@@ -103,25 +123,3 @@ xyplot(..., as.formula(paste(y, "~ Time|day")), data = dat,
 	)	
 
 }		
-		
-		
-	
-		
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
