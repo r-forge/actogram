@@ -51,7 +51,7 @@ actogram(activity ~ datetime_,  dat = sesa, subset = ID == 2, strip.left = FALSE
 actogram(activity ~ datetime_,  dat = sesa, subset = ID == 2, main = "actogram")
 
 # breeding stage information marked by the strip color
-actogram(activity ~ datetime_,  strip.left.classes = "breeding_stage", dat = sesa, subset = ID == 2, main = "actogram")
+actogram(activity ~ datetime_,  strip.left.classes = "breeding_stage", dat = sesa[sesa$ID==2, ], main = "actogram")
 
 # a conditional actogram using all decorations
 actogram(activity ~ datetime_,  strip.left.classes = "breeding_stage", groups = "ID" , dat = sesa, main = "conditional actogram")
