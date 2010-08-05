@@ -23,7 +23,7 @@ y = deparse(formula[[2L]])         #activity
 
 dat[, x] = as.POSIXct(dat[, x])
 
-dat$day  = as.Date(dat[, x] )
+dat$day  = as.Date(trunc(dat[, x] , "day") )
 dat$Time = as.numeric(difftime(dat[, x], trunc(dat[, x], "day"), units = "hours"))
 
 # double data

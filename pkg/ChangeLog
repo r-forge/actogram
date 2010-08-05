@@ -1,0 +1,6 @@
+2010-Aug-05  Mihai Valcu <valcu@orn.mpg.de>
+
+	* DESCRIPTION (Date, Version): 0.0-2
+	* Bug fix: wrong date in left strip. Thanks to Marina Lehmann  <marina.lehmann@uni-konstanz.de>
+
+
