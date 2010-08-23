@@ -29,7 +29,9 @@ dat$Time = as.numeric(difftime(dat[, x], trunc(dat[, x], "day"), units = "hours"
 # double data
 if(doublePlot) {
 	aa = dat
-	aa$Time = aa$Time + 24
+	dat$Time = dat$Time + 24
+	# 2010-Aug-23 21:32:05
+	dat$day  = dat$day + 1
 	dat = rbind(dat,aa)
 	}
 

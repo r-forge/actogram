@@ -3,4 +3,9 @@
 	* DESCRIPTION (Date, Version): 0.0-2
 	* Bug fix: wrong date in left strip. Thanks to Marina Lehmann  <marina.lehmann@uni-konstanz.de>
 
+2010-Aug-23  Mihai Valcu <valcu@orn.mpg.de>
+
+	* DESCRIPTION (Date, Version): 0.0-3
+	* Changed the double plot option to allow plotting of two consecutive days.
+
 
