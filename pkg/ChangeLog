@@ -1,11 +1,17 @@
-2010-Aug-05  Mihai Valcu <valcu@orn.mpg.de>
+
+2010-Nov-08 12:48:33 Mihai Valcu
+	* DESCRIPTION (Date, Version): 0.0-3.1
+	* type = "h" added to function arguments (to be passed to panel.xyplot)
+
+2010-Aug-23  Mihai Valcu
+
+	* DESCRIPTION (Date, Version): 0.0-3
+	* Changed the double plot option to allow plotting of two consecutive days.
+
+2010-Aug-05  Mihai Valcu
 
 	* DESCRIPTION (Date, Version): 0.0-2
 	* Bug fix: wrong date in left strip. Thanks to Marina Lehmann  <marina.lehmann@uni-konstanz.de>
 
-2010-Aug-23  Mihai Valcu <valcu@orn.mpg.de>
-
-	* DESCRIPTION (Date, Version): 0.0-3
-	* Changed the double plot option to allow plotting of two consecutive days.
 
 
