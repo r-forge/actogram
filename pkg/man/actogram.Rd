@@ -59,8 +59,7 @@ actogram(activity ~ datetime_,  strip.left.classes = "breeding_stage", groups = 
 }	
 
 \author{
-Author:  Mihai Valcu \email{valcu@orn.mpg.de}
-Maintainer: Mihai Valcu \email{valcu@orn.mpg.de}
+Author:  Mihai Valcu \email{valcu@orn.mpg.de},  Marina Lehmann \email{marina.lehmann@uni-konstanz.de}
 }
 
 

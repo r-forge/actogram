@@ -9,6 +9,7 @@ actogram <- function(formula,
 					strip.left.cex = .8, 
 					doublePlot = TRUE,
 					strip.left = TRUE,
+					rug = FALSE,
 					type = "h", 
 					scale = 2,
 					xlab = "Hours", 
@@ -72,8 +73,8 @@ strip.left	= function(which.panel, ...) {
 # panel
 panel = function(x,y,...) {
 				   y = y/scale
-				   panel.xyplot(x,y,..., type = type, cex = .5)
-				   panel.rug(x, regular = FALSE,  col = 2) # non- missing data
+				   panel.xyplot(x,y, type = type, ...)
+				   if(rug) panel.rug(x, regular = FALSE,  col = 2) # non- missing data
 				   panel.abline(v = 24, col = "grey")
 				    # panel.number() 
 				   }			  

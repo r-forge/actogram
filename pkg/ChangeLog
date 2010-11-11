@@ -2,6 +2,7 @@
 2010-Nov-08 12:48:33 Mihai Valcu
 	* DESCRIPTION (Date, Version): 0.0-3.1
 	* type = "h" added to function arguments (to be passed to panel.xyplot)
+	* added 'rug' option. if rug = FALSE then panel.rug() is called
 
 2010-Aug-23  Mihai Valcu
 
