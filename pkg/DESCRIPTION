@@ -1,7 +1,7 @@
 Package: actogram
 Type: Package
 Depends: R (>= 1.8.0), grid, lattice, circular, maptools
-Version: 0.0-3.1
+Version: 0.0-3.2
 Description: Actogram plots
 Date: 2010-Nov-08 09:51:21
 Author: Mihai Valcu, Marina Lehmann<marina.lehmann@uni-konstanz.de>
