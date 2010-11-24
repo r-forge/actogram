@@ -1,32 +1,34 @@
 
 
 
-actlocator <- function(act) {
+actlocator <- function(act, ...) {
 	
-	try(dev.off(), silent = TRUE)
 	print(act)
 
-	day = trellis.focus()$row
+	 plocs = trellis.currentLayout()
 
-	id = panel.identify( n= 1, threshold = 18*2)
-
-	loc = act$panel.args[[day]]
-	loc = c(loc$x[id] , loc$y[id] )
-
-	date_ = names(act$packet.sizes[day])
-
-	datetime_ = as.POSIXct(as.POSIXlt(as.Date(date_))) + loc[1]*3600
+	 o = list()
+	for( i in 1:nrow(plocs) ) {
+		trellis.focus("panel", column = 1, row  = i)
+		id = panel.identify(...)
+		pn = act$panel.args[[i]]
+		pn = data.frame(x = pn$x, y = pn$y)
+		pn = pn[id, ]
+		date_ = names(act$packet.sizes[i])
+		pn$x = as.POSIXct(as.POSIXlt(as.Date(date_))) + pn$x*3600
+		o[[i]] = pn
+		}
 	
-	data.frame(act = loc[2], datetime_ = datetime_)
-	
+	   return(do.call('rbind',  o))
 
-	
 }
 
 
+
+
 # data(sesa)
-# a = actogram(activity ~ datetime_,  dat = sesa, subset = ID == 2, strip.left = TRUE, main = "actogram")
-# actlocator(a)
+#a = actogram(activity ~ datetime_,  dat = sesa, subset = ID == 2, strip.left = TRUE, main = "actogram")
+#  x = actlocator(a)
 
 
 
