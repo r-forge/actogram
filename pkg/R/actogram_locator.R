@@ -3,7 +3,7 @@
 
 actlocator <- function(act) {
 	
-	dev.off()
+	try(dev.off(), silent = TRUE)
 	print(act)
 
 	day = trellis.focus()$row
