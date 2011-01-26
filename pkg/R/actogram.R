@@ -32,7 +32,7 @@ dat$Time = as.numeric(difftime(dat[, x], trunc(dat[, x], "day"), units = "hours"
 if(doublePlot) {
 	aa = dat
 	aa$Time = aa$Time + 24
-    dat$day  = dat$day + 1
+    aa$day  = aa$day - 1
 	dat = rbind(dat,aa)
 	}
 
@@ -56,6 +56,11 @@ if(missing(strip.left.classes)) {
 	dat$noClass = "a"
 	}
 
+# change of left strip colors
+# background<- trellis.par.get("superpose.polygon")
+# background$col <- c("#777777","#C3C3C3","#E3E3E3","#777777","#C3C3C3","#3A3A3A")
+# trellis.par.set("superpose.polygon", background)
+
 sl = dat[!duplicated(dat$day), c("day", strip.left.classes)]
 z = data.frame(table(sl[, strip.left.classes]))
 z$cols = trellis.par.get("superpose.polygon")$col[1:nrow(z)]
@@ -71,9 +76,15 @@ strip.left	= function(which.panel, ...) {
 		      }
 
 # panel
+
+#legnd<- trellis.par.get("superpose.symbol")
+#legnd$col <- c("black","red","#C3C3C3","#3A3A3A","#777777","#C3C3C3")
+#trellis.par.set("superpose.symbol", legnd)
+
 panel = function(x,y,...) {
 				   y = y/scale
-				   panel.xyplot(x,y, type = type, ...)
+				   panel.xyplot(x,y, type = type, ...,#col = c("black","red","#C3C3C3","#3A3A3A")
+				   )
 				   if(rug) panel.rug(x, regular = FALSE,  col = 2) # non- missing data
 				   panel.abline(v = 24, col = "grey")
 				    # panel.number() 
