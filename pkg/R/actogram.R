@@ -141,7 +141,7 @@ xyplot(..., as.formula(paste(y, "~ Time|day")), data = dat,
 			xlab = xlab, 
 			ylab = ylab,
 			scales = scales,
-			key = NULL
+			key = key
 	)	
 
 }		
