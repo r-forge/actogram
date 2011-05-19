@@ -7,6 +7,7 @@ actogram <- function(formula,
 					groups, 
 					strip.left.classes, 
 					strip.left.cex = .8, 
+					strip.left.format = "%b-%d", 
 					doublePlot = TRUE,
 					strip.left = TRUE,
 					rug = FALSE,
@@ -67,6 +68,9 @@ if(missing(strip.left.classes)) {
 # trellis.par.set("superpose.polygon", background)
 
 sl = dat[!duplicated(dat$day), c("day", strip.left.classes)]
+
+print(summary(sl))
+
 z = data.frame(table(sl[, strip.left.classes]))
 z$cols = trellis.par.get("superpose.polygon")$col[1:nrow(z)]
 sl =  merge(sl, z, by.x = strip.left.classes, by.y = 'Var1', all.x = TRUE )
@@ -75,7 +79,7 @@ sl = sl[order(sl$day), ]
 #strip.left
 if(strip.left)			
 strip.left	= function(which.panel, ...) {
-					LAB = sl[which.panel, "day"]
+					LAB = format(sl[which.panel, "day"], strip.left.format)
 					grid.rect(gp = gpar(fill = sl[which.panel, "cols"] ))
 					ltext(.5, .5, cex = strip.left.cex, LAB )
 		      }
