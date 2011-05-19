@@ -1,13 +1,13 @@
+
+
+2011-May-19 20:19:33 Mihai Valcu
+	* DESCRIPTION (Date, Version): 0.0-3.3
+	* xaxt added to actogram()
+
 2011-Jan-26  Marina Lehmann
 	* DESCRIPTION (Date, Version): 0.0-3.2
 	* previously the date on the left strip corresponded to data in the right hand panel, now to the left hand panel
 	* added some lines that can be uncommented to change colours of data, left strip and legend
-
-
-
-2011-May-19 20:19:33 Mihai Valcu
-	* DESCRIPTION (Date, Version): 0.0-3.22
-	* xaxt added to actogram()
 	  
 	2010-Nov-08 12:48:33 Mihai Valcu
 	* DESCRIPTION (Date, Version): 0.0-3.2

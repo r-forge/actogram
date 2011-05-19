@@ -1,13 +1,9 @@
 Package: actogram
 Type: Package
 Depends: R (>= 1.8.0), grid, lattice, circular, maptools
-Version: 0.0-3.22
+Version: 0.0-3.3
 Description: Actogram plots
-<<<<<<< .mine
 Date: 2011-May-19
-=======
-Date: 2011-Jan-26
->>>>>>> .r25
 Author: Mihai Valcu, Marina Lehmann<marina.lehmann@uni-konstanz.de>
 Maintainer: Mihai Valcu <valcu@orn.mpg.de>
 Title: Actogram plots
