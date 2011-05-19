@@ -124,23 +124,24 @@ if(!is.null(groups) & nrow(z) > 1) {
 	} else
 	key = NULL
 
-	if(!groups.key)
-	 key = NULL
+if(!groups.key)
+ key = NULL
 	
-
+print(!groups.key)
+print(key)
 #xyplot
 xyplot(..., as.formula(paste(y, "~ Time|day")), data = dat, 
 			lattice.options = list(layout.widths = list(strip.left = list(x = max(nchar(dat$day)) ))),
 			layout = c(1, length(unique(dat[, "day"]))), 	
 			as.table = TRUE,
-			groups = groups ,
+			groups = groups,
 			strip = FALSE,
 			strip.left = strip.left,
 			panel = panel,	
 			xlab = xlab, 
 			ylab = ylab,
 			scales = scales,
-			key = key
+			key = NULL
 	)	
 
 }		
