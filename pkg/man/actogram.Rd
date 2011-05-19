@@ -32,6 +32,7 @@
      \item{strip.left}{a logical vector, if \code{TRUE}, default, draw  strips to the left of each panel}
      \item{scale}{a numeric vector of length 1 allowing for downscaling of activity spikes}
      \item{xaxt}{a logical value indicating whether x-axis should be drawn on the plot}
+     \item{xaxt}{a logical value indicating the legend associated with groups should be printed}
      \item{xlab}{character string giving label name for the x-axis}
      \item{ylab}{character string giving label name for the y-axis}
      \item{...}{further arguments to be passed to \code{\link{xyplot}}}

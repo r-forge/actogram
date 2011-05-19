@@ -13,6 +13,7 @@ actogram <- function(formula,
 					type = "h", 
 					scale = 2,
 					xaxt = TRUE,
+					groups.key = TRUE, 
 					xlab = "Hours", 
 					ylab = "Activity", ...) {
 
@@ -122,7 +123,9 @@ if(!is.null(groups) & nrow(z) > 1) {
 				)
 	} else
 	key = NULL
-	
+
+	if(!groups.key)
+	 key = NULL
 	
 
 #xyplot
