@@ -1,6 +1,4 @@
 
-
-
 actlocator <- function(act, ...) {
 	
 	print(act)
@@ -24,11 +22,9 @@ actlocator <- function(act, ...) {
 }
 
 
-
-
 # data(sesa)
-#a = actogram(activity ~ datetime_,  dat = sesa, subset = ID == 2, strip.left = TRUE, main = "actogram")
-#  x = actlocator(a)
+# a = actogram(activity ~ datetime_,  dat = sesa[sesa$ID == 2 & sesa$breeding_stage =="incubation",  ], subset = ID == 2, strip.left = TRUE, main = "actogram")
+# x = actlocator(a, cex = .5, col = 2, alpha = 0.5)
 
 
 

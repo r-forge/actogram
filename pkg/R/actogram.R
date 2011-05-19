@@ -12,6 +12,7 @@ actogram <- function(formula,
 					rug = FALSE,
 					type = "h", 
 					scale = 2,
+					xaxt = TRUE,
 					xlab = "Hours", 
 					ylab = "Activity", ...) {
 
@@ -41,14 +42,17 @@ if(doublePlot) {
 groups = if(!missing(groups)) dat[, groups] else NULL
 
 # xy scales
-scales = list( x = list(at = 0 : (if(doublePlot) 48 else 24), 
-				labels = rep(format(seq.POSIXt(trunc(Sys.time(), "day"), 
-						trunc(Sys.time(), "day") +23*3600, "hours"),  "%H:%M"), len = 49),
-				rot = 90,
-				cex = .7,
-				limits = c(0,(if(doublePlot) 48 else 24))),
-				y = list(draw = FALSE)		
-			)	
+if(xaxt) 
+	scales = list( x = list(at = 0 : (if(doublePlot) 48 else 24), 
+					labels = rep(format(seq.POSIXt(trunc(Sys.time(), "day"), 
+							trunc(Sys.time(), "day") +23*3600, "hours"),  "%H:%M"), len = 49),
+					rot = 90,
+					cex = .7,
+					limits = c(0,(if(doublePlot) 48 else 24))),
+					y = list(draw = FALSE)		
+				) else
+		scales =  list(draw = FALSE)
+				
 
 # strip.left color factor
 if(missing(strip.left.classes)) { 
