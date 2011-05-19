@@ -127,8 +127,6 @@ if(!is.null(groups) & nrow(z) > 1) {
 if(!groups.key)
  key = NULL
 	
-print(!groups.key)
-print(key)
 #xyplot
 xyplot(..., as.formula(paste(y, "~ Time|day")), data = dat, 
 			lattice.options = list(layout.widths = list(strip.left = list(x = max(nchar(dat$day)) ))),
