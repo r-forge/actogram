@@ -21,21 +21,20 @@ none
 
 
 \examples{
-setseed(111222333)
+set.seed(111222333)
 require(actogram)
 d = data.frame(x = abs(unlist(lapply(1:10, function(x) rnorm(sd = sample(c(1, 5, 10), 1), mean = 2, n = 1000))))+1,
-			datetime = seq.POSIXt(from =Sys.time(), to = Sys.time()+3600*24*10,  length.out = length(x) ) )
+			datetime = seq.POSIXt(from =Sys.time(), to = Sys.time()+3600*24*10,  length.out = 10000 ) )
 
 actogram(abs(x) ~ datetime, d)
 
 d1 = with(d, runCV(x, datetime, periods = 5))
 
-actogram( CV~ datetime, d1)
+actogram(CV~ datetime, d1)
 
 d1$act = ifelse(d1$CV > median(d1$CV), 1, 0)
 
 actogram( act ~ datetime, d1)
-
 }
 
 
