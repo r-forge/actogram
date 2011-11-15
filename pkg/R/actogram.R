@@ -79,7 +79,7 @@ strip.left	= function(which.panel, ...) {
 
 panel = function(x,y,...) {
 				   y = y/scale
-				   panel.xyplot(x,y, type = type, ...,#col = c("black","red","#C3C3C3","#3A3A3A")
+				   panel.xyplot(x,y, type = type, ...,
 				   )
 				   if(rug) panel.rug(x, regular = FALSE,  col = 2) # non- missing data
 				   panel.abline(v = 24, col = "grey")

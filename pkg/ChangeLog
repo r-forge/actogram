@@ -36,5 +36,9 @@
 	* DESCRIPTION (Date, Version): 0.0-3.4
 	* minor change
 
+2011-Nov-15  Mihai Valcu
+
+	* DESCRIPTION (Date, Version): 0.0-3.5
+	* new function runCV
 
 

@@ -1,10 +1,10 @@
 Package: actogram
 Type: Package
-Depends: R (>= 1.8.0), grid, lattice, circular, maptools
-Version: 0.0-3.4
+Depends: R (>= 2.13.0), grid, lattice, circular, maptools, fts
+Version: 0.0-3.5
 Description: Actogram plots
-Date: 2011-Sep-09
-Author: Mihai Valcu, Marina Lehmann<marina.lehmann@uni-konstanz.de>
-Maintainer: Mihai Valcu <valcu@orn.mpg.de>
+Date: 2011-Nov-15
+Author: Mihai Valcu, Marina Lehmann<marina.lehmann@uni-konstanz.de>, Anne Rutten 
+Maintainer: Mihai Valcu <valcu@orn.mpg.de>, Anne Rutten <arutten@orn.mpg.de>
 Title: Actogram plots
 License: GPL (>= 2)
