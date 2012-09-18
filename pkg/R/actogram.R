@@ -11,12 +11,13 @@ actogram <- function(formula,
 					doublePlot = TRUE,
 					strip.left = TRUE,
 					rug = FALSE,
-					type = "h", 
+					type = "h",					
 					scale = 2,
 					xaxt = TRUE,
 					groups.key = TRUE, 
 					xlab = "Hours", 
-					ylab = "Activity", ...) {
+					ylab = "Activity",
+                    layout,	...) {
 
 dat = dat
 
@@ -117,11 +118,13 @@ if(!is.null(groups) & nrow(z) > 1) {
 
 if(!groups.key)
  key = NULL
-	
+
+#layout
+if (missing(layout)) layout = c(1, length(unique(dat[, "day"])))
 #xyplot
 xyplot(..., as.formula(paste(y, "~ Time|day")), data = dat, 
 			lattice.options = list(layout.widths = list(strip.left = list(x = max(nchar(dat$day)) ))),
-			layout = c(1, length(unique(dat[, "day"]))), 	
+			layout = layout, 	
 			as.table = TRUE,
 			groups = groups,
 			strip = FALSE,
