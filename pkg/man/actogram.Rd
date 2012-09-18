@@ -11,13 +11,17 @@
 					groups, 
 					strip.left.classes, 
 					strip.left.cex = .8, 
+					strip.left.format = "%b-%d", 
 					doublePlot = TRUE,
 					strip.left = TRUE,
+					rug = FALSE,
+					type = "h",					
 					scale = 2,
 					xaxt = TRUE,
-					groups.key = TRUE,
+					groups.key = TRUE, 
 					xlab = "Hours", 
-					ylab = "Activity", ...)
+					ylab = "Activity",
+                    layout,	...)
 }
 
 \arguments{
@@ -29,18 +33,20 @@
      \item{groups}{passed to \code{\link{xyplot}}}
      \item{strip.left.classes}{a grouping factor used to identify the left strip color classes}
      \item{strip.left.cex}{strip.left.cex}
-     \item{doublePlot}{a logical vector, default to \code{TRUE}}
+     \item{doublePlot}{a logical vector, default to the same value as xFixed.}
+	 \item{xFixed}{a logical vector indicating whether the x-axis scale is forced to a 24-hour period, default to \code{TRUE}}
      \item{strip.left}{a logical vector, if \code{TRUE}, default, draw  strips to the left of each panel}
      \item{scale}{a numeric vector of length 1 allowing for downscaling of activity spikes}
      \item{xaxt}{a logical value indicating whether x-axis should be drawn on the plot}
      \item{groups.key}{a logical value indicating the legend associated with groups should be printed}
      \item{xlab}{character string giving label name for the x-axis}
      \item{ylab}{character string giving label name for the y-axis}
+	 \item{layout}{vector specifying the graph layout (number of columns, number of rows)}
      \item{...}{further arguments to be passed to \code{\link{xyplot}}}
 }	 
 
 \details{
- \code{actogram} is, for the moment, the sole function of the \pkg{actogram} package.  \code{actogram} is a thin wrapper around xyplot.
+   \code{actogram} is a thin wrapper around xyplot.
  The left strip color is set using  \code{\link{trellis.par.get}("superpose.polygon")$col}
 }
 
