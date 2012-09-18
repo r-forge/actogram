@@ -11,7 +11,6 @@
 					groups, 
 					strip.left.classes, 
 					strip.left.cex = .8, 
-					strip.left.format = "%b-%d", 
 					doublePlot = TRUE,
 					strip.left = TRUE,
 					rug = FALSE,
@@ -33,8 +32,7 @@
      \item{groups}{passed to \code{\link{xyplot}}}
      \item{strip.left.classes}{a grouping factor used to identify the left strip color classes}
      \item{strip.left.cex}{strip.left.cex}
-     \item{doublePlot}{a logical vector, default to the same value as xFixed.}
-	 \item{xFixed}{a logical vector indicating whether the x-axis scale is forced to a 24-hour period, default to \code{TRUE}}
+     \item{doublePlot}{a logical vector}
      \item{strip.left}{a logical vector, if \code{TRUE}, default, draw  strips to the left of each panel}
      \item{scale}{a numeric vector of length 1 allowing for downscaling of activity spikes}
      \item{xaxt}{a logical value indicating whether x-axis should be drawn on the plot}
