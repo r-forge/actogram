@@ -2,6 +2,7 @@
 # TODO; day, night bar
 # TODO: avoid data doubling for doublePlot = TRUE 
 
+
 actogram <- function(formula, 
 					dat, 
 					groups, 
@@ -31,6 +32,10 @@ dat[, x] = as.POSIXct(dat[, x])
 
 dat$day  = as.Date(trunc(dat[, x] , "day") )
 dat$Time = as.numeric(difftime(dat[, x], trunc(dat[, x], "day"), units = "hours"))
+
+#add missing days
+days     = seq.Date(min(dat$day),max(dat$day),by='days')
+dat      = merge(dat,data.frame(day = days),all=TRUE)
 
 # double data
 if(doublePlot) {
@@ -121,6 +126,7 @@ if(!groups.key)
 
 #layout
 if (missing(layout)) layout = c(1, length(unique(dat[, "day"])))
+
 #xyplot
 xyplot(..., as.formula(paste(y, "~ Time|day")), data = dat, 
 			lattice.options = list(layout.widths = list(strip.left = list(x = max(nchar(dat$day)) ))),
