@@ -18,7 +18,8 @@ actogram <- function(formula,
 					groups.key = TRUE, 
 					xlab = "Hours", 
 					ylab = "Activity",
-                    layout,	...) {
+                    layout,
+                    key,...) {
 
 dat = dat
 
@@ -92,8 +93,8 @@ panel = function(x,y,...) {
 				    # panel.number() 
 				   }			  
 # legend
-
-if(!is.null(groups) & nrow(z) > 1) {
+if (missing(key)) {
+ if(!is.null(groups) & nrow(z) > 1) {
 	groupLevels = levels(factor(groups))
 	stripLevels = levels(factor(z$Var1))
 			  
@@ -121,8 +122,9 @@ if(!is.null(groups) & nrow(z) > 1) {
 	} else
 	key = NULL
 
-if(!groups.key)
+ if(!groups.key)
  key = NULL
+ }
 
 #layout
 if (missing(layout)) layout = c(1, length(unique(dat[, "day"])))
